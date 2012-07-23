@@ -1,1 +1,0 @@
-exports.dburl = "localhost/exten";

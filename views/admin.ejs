@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	 <meta charset="utf-8" />
+
+    <!-- style -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css" />
+
+    <!-- script -->
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/adminAction.js"></script>
+
+		<title>Admin</title>
+  </head>
+  <body style="margin-top: 50px;">
+    <div class="span12">
+
+    <h1>所有插件</h1>
+    <table class="table table-bordered">
+      <tr>
+        <td>插件名称</td>
+        <td>插件类型</td>
+        <td>插件描述</td>
+        <td>插件ID</td>
+        <td>审核状态</td>
+      </tr>
+  	 <% for(var i=0; i<result.length; i++) { %>
+        <tr>
+          <td><%= result[i].name %></td>
+          <td><%= result[i].type %></td>
+          <td><%= result[i].desc %></td>
+          <td><%= result[i]._id %></td>
+          <td><%= result[i].pass %></td>
+        </tr>
+     <% } %>
+    </table>
+    <h1>人工审核</h1>
+    <form method="POST" action="/pass" class="well form-inline">
+      <label>插件ID: </label>
+      <input type="text" name="id" />
+      <button type="submit" class="btn btn-primary">提交</button>
+    </form>
+  </div>
+  </body>
+</html>

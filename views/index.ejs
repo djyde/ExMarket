@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/favicon.ico" mce_href="/images/favicon.ico" type="image/x-icon">
+    <title>ExMarket</title>
+    
+    <!-- style -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+
+    <!-- script -->
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap-popover.js"></script>
+    <script type="text/javascript" src="/javascripts/action.js"></script>
+  
+  </head>
+	<body>
+	<div class="container">
+		<div class="span12" style="margin-top: 30px; margin-bottom: 30px">
+			<div class="span6">
+				<p><h1 style="font-size: 48px"><img src="/images/logo.png" style="width: 30px; height: 30px; margin-top: -10px"/>ExMarket  <small>本土化的Chrome商店</small></h1></p>
+				<p><a href="#push" class="btn btn-primary btn-large" data-toggle="modal">投递你的插件 &raquo;</a></p>
+			</div>
+			<div class="span5">
+				<ul class="thumbnails">
+					<li>
+						<div class="thumbnail">
+							<img src="/images/exten.png" />		
+							<div class="caption">
+								<center><a class="btn btn-success"><strong>立即获取,一键打开ExMarket!</strong></a></center>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		
+		<ul class="nav nav-pills">
+      <li class="active">
+        <a href="/">推荐</a>
+      </li>
+      <li>
+        <a href="/type/social">社交</a>
+      </li>
+      <li>
+        <a href="/type/shop">购物</a>
+      </li>
+      <li>
+        <a href="/type/work">事务</a>
+      </li>
+      <li>
+        <a href="/type/tool">实用工具</a>
+      </li>
+      <li>
+        <a href="/type/news">新闻 & 资讯</a>
+      </li>
+      <li>
+        <a href="/type/other">其它</a>
+      </li>
+      <li class="dropdown pull-right">
+          <a class="dropdown-toggle tip" rel="tooltip" title="默认按评分排序">排序 <b class="caret"></b></a>
+      </li>
+    </ul>
+		
+		<div class=row>
+			<div class="span12">
+				<ul class="thumbnails">
+					
+					<% for(var i=0; i<result.length; i++){ %>
+            <% if(result[i].pass === 1) { %>
+            <li class="span3" name="extshow">
+            <!-- Gallery -->
+              <div class="thumbnail">
+                <img class="imgdesc" rel="popover" src="/images/PassImg/<%= result[i]._id %>.png" data-original-title="<%= result[i].name %>" data-content="<%= result[i].desc %>"/>
+               <div class="caption">
+                 <center><h3><%= result[i].name %></h3></center>
+                 <a class="btn btn-primary download" style="margin-top: 10px; width: 100px;" data-id="<%= result[i]._id %>" href="/crx/PassCrx/<%= result[i]._id %>.crx"><i class="icon-plus icon-white"></i>添加到Chrome</a>
+                  <a class="btn tip plusone"  rel="tooltip" style="margin-top: 10px; width: 40px" title="已经有<%= result[i].like %>人点赞" data-id="<%= result[i]._id %>"><i class="icon-thumbs-up"></i>+1</a>
+               </div>
+              </div>  
+            </li>
+            <% } %>
+          <% } %>
+
+				</ul>
+
+			</div>
+
+      <div class="span12" style="text-align: center; margin-top: 100px; font-size: 12px">
+        <p>By <a href="http://djyde.github.com"> Randy </a></p>
+        <p><a href="http://nodejs.org">Node.js</a>(<a href="http://expressjs.org">Express</a>) , <a href="http://mongodb.org">Mongodb</a>(<a href="https://github.com/kissjs/node-mongoskin">Mongoskin</a>) , <a href="http://embeddedjs.com">EJS</a></p>
+        <p>感谢<a href="http://cnodejs.net">NAE</a>提供初始动力</p>
+      </div>
+		</div>
+		<div class="modal hide" id="push">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">x</button>
+        <h3>投递</h3>
+      </div>
+      <div class="modal-body">
+          <form method="POST" action="/push" enctype="multipart/form-data">
+            <fieldset>
+              <div class="control-group">
+                <label class="control-label">插件名称 : </label>
+                <input class="input-xlarge" type="text" name="name" id="name"/>
+                <label>插件分类</label>
+                <select name="type" class="span1">
+                  <option value="social">社交</option>
+                  <option value="shop">购物</option>
+                  <option value="work">事务</option>
+                  <option value="news">新闻 & 资讯</option>
+                  <option value="tool">实用工具</option>
+                  <option value="other">其它</option>
+                </select>
+                <label class="control-label">图片 : </label>
+                <input class="input-file" style="width: 200px;" type="file" name="pic">
+                <label class="control-label">安装文件上传 : </label>
+                <input class="input-file" style="width: 200px;" type="file" name="crx">
+                <label>插件描述</label>
+                <textarea class="input-xlarge" style="height: 60px;" name="desc"></textarea>
+              </div>
+              <div class="form-actions">
+                <button id="push_btn" class="btn btn-primary">投递</button>
+              </div>
+
+            </fieldset>
+          </form>
+      </div>
+    </div>
+	</body>
+</html>

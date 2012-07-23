@@ -1,0 +1,10 @@
+﻿body{
+	padding-top: 10px;
+}
+.thumbnail{
+	cursor: pointer;
+}
+
+.cont{
+	height: 110px;
+}

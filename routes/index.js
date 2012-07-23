@@ -32,15 +32,17 @@ exports.pushExt = function(req,res){
 	var pic_name = req.files.pic.name;
 	var crx_path = req.files.crx.path;
 	var crx_name = req.files.crx.name;
-	console.log(path.normalize(pic_path));
-	models.pushExt(name,type,desc,function(err,result){
+	var final_pic_path = name + pic_name;
+	var final_crx_path = name + crx_name;
+	models.pushExt(name,type,desc,final_pic_path,final_crx_path,function(err,result){
 		if(err) return res.send('error');
-		models.moveFiles('./' + path.normalize(pic_path), './public/images/PassImg/' + name + pic_name,function(err){
+        console.log(req.files);
+		models.moveFiles(path.normalize(__dirname + '/../' + pic_path), path.normalize(__dirname + '/../public/images/PassImg/') + name + pic_name,function(err){
+        	if(err) return res.send('move error');
+		});
+		models.moveFiles(path.normalize(__dirname + '/../' + crx_path), path.normalize(__dirname + '/../public/crx/PassCrx/') + name + crx_name,function(err){
 			if(err) return res.send('move error');
-		})
-		models.moveFiles('./' + path.normalize(crx_path), './public/crx/PassCrx/' + name + crx_name,function(err){
-			if(err) return res.send('move error');
-		})
+		});
 		res.redirect('/');
 	});
 };

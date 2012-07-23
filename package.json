@@ -1,13 +1,25 @@
 {
-  "name": "application-name",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node app"
+  "name" : "ExMarket",
+  "version" : "0.0.1",
+  "private" : true,
+  "scripts" : 
+  {
+    "start" : "./app.js"
   },
-  "dependencies": {
-    "express": "3.0.0beta7",
-    "ejs": "*",
+  "dependencies" : 
+  {
+    "express" : "3.0.0beta7",
+    "ejs" : "*",
     "mongoskin" : "*"
-  }
+  },
+  "author" : "Randy",
+  "description" : "Chinese Native Chrome Store",
+  "contributors" : 
+  [
+    {
+      "name" : "Randy",
+      "email" : "randypriv@gmail.com"
+    }
+  ],
+  "main" : "./app.js"
 }

@@ -75,10 +75,10 @@
             <li class="span3" name="extshow">
             <!-- Gallery -->
               <div class="thumbnail">
-                <img class="imgdesc" rel="popover" src="/images/PassImg/<%= result[i]._id %>.png" data-original-title="<%= result[i].name %>" data-content="<%= result[i].desc %>"/>
+                <img class="imgdesc" rel="popover" src="/images/PassImg/<%= result[i].final_pic_path %>" data-original-title="<%= result[i].name %>" data-content="<%= result[i].desc %>"/>
                <div class="caption">
                  <center><h3><%= result[i].name %></h3></center>
-                 <a class="btn btn-primary download" style="margin-top: 10px; width: 100px;" data-id="<%= result[i]._id %>" href="/crx/PassCrx/<%= result[i]._id %>.crx"><i class="icon-plus icon-white"></i>添加到Chrome</a>
+                 <a class="btn btn-primary download" style="margin-top: 10px; width: 100px;" data-id="<%= result[i]._id %>" href="/crx/PassCrx/<%= result[i].final_crx_path %>"><i class="icon-plus icon-white"></i>添加到Chrome</a>
                   <a class="btn tip plusone"  rel="tooltip" style="margin-top: 10px; width: 40px" title="已经有<%= result[i].like %>人点赞" data-id="<%= result[i]._id %>"><i class="icon-thumbs-up"></i>+1</a>
                </div>
               </div>  

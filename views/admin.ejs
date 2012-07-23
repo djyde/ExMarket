@@ -22,6 +22,8 @@
         <td>插件类型</td>
         <td>插件描述</td>
         <td>插件ID</td>
+        <td>图片文件名</td>
+        <td>插件文件名</td>
         <td>审核状态</td>
       </tr>
   	 <% for(var i=0; i<result.length; i++) { %>
@@ -30,6 +32,8 @@
           <td><%= result[i].type %></td>
           <td><%= result[i].desc %></td>
           <td><%= result[i]._id %></td>
+          <td><%= result[i].final_pic_path %></td>
+          <td><%= result[i].final_crx_path %></td>
           <td><%= result[i].pass %></td>
         </tr>
      <% } %>

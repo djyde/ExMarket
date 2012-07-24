@@ -9,13 +9,16 @@
     <!-- style -->
     <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-
     <!-- script -->
     <script type="text/javascript" src="/javascripts/jquery.js"></script>
     <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="/javascripts/bootstrap-popover.js"></script>
     <script type="text/javascript" src="/javascripts/action.js"></script>
-  
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb6c190bd60cd8a96a08831e0278a341d' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
   </head>
 	<body>
 	<div class="container">
@@ -30,18 +33,17 @@
 						<div class="thumbnail">
 							<img src="/images/exten.png" />		
 							<div class="caption">
-								<center><a class="btn btn-success"><strong>立即获取,一键打开ExMarket!</strong></a></center>
+								<center><a class="btn btn-success" href="/crx/OneKeyExMarket.crx"><strong>立即获取,更便捷的ExMarket!</strong></a></center>
 							</div>
 						</div>
 					</li>
 				</ul>
 			</div>
 		</div>
-
 		
 		<ul class="nav nav-pills">
       <li class="active">
-        <a href="/">推荐</a>
+        <a href="/">最新</a>
       </li>
       <li>
         <a href="/type/social">社交</a>
@@ -85,11 +87,8 @@
             </li>
             <% } %>
           <% } %>
-
 				</ul>
-
 			</div>
-
       <div class="span12" style="text-align: center; margin-top: 100px; font-size: 12px">
         <p>By <a href="http://djyde.github.com"> Randy </a></p>
         <p><a href="http://nodejs.org">Node.js</a>(<a href="http://expressjs.org">Express</a>) , <a href="http://mongodb.org">Mongodb</a>(<a href="https://github.com/kissjs/node-mongoskin">Mongoskin</a>) , <a href="http://embeddedjs.com">EJS</a></p>
@@ -126,10 +125,10 @@
               <div class="form-actions">
                 <button id="push_btn" class="btn btn-primary">投递</button>
               </div>
-
             </fieldset>
           </form>
       </div>
     </div>
+
 	</body>
 </html>

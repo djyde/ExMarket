@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/favicon.ico" mce_href="/images/favicon.ico" type="image/x-icon">
-    <title>ExMarket</title>
+    <title>ExMarket - 本土化的Chrome插件商店</title>
     
     <!-- style -->
     <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css" />
@@ -18,30 +18,40 @@
         var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
         document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb6c190bd60cd8a96a08831e0278a341d' type='text/javascript'%3E%3C/script%3E"));
     </script>
-
   </head>
-	<body>
-	<div class="container">
-		<div class="span12" style="margin-top: 30px; margin-bottom: 30px">
-			<div class="span6">
-				<p><h1 style="font-size: 48px"><img src="/images/logo.png" style="width: 30px; height: 30px; margin-top: -10px"/>ExMarket  <small>本土化的Chrome商店</small></h1></p>
-				<p><a href="#push" class="btn btn-primary btn-large" data-toggle="modal">投递你的插件 &raquo;</a></p>
-			</div>
-			<div class="span5">
-				<ul class="thumbnails">
-					<li>
-						<div class="thumbnail">
-							<img src="/images/exten.png" />		
-							<div class="caption">
-								<center><a class="btn btn-success" href="/crx/OneKeyExMarket.crx"><strong>立即获取,更便捷的ExMarket!</strong></a></center>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-		
-		<ul class="nav nav-pills">
+  <body>
+  <div class="container">
+    <div class="span12" style="margin-top: 30px; margin-bottom: 30px">
+      <div class="span6">
+        <p><h1 style="font-size: 48px"><img src="/images/logo.png" style="width: 30px; height: 30px; margin-top: -10px"/>ExMarket  <small>本土化的Chrome插件商店</small></h1></p>
+        <p>
+                    <a href="#push" class="btn btn-primary btn-large" data-toggle="modal">投递你的插件 &raquo;</a>
+                    <!-- JiaThis Button BEGIN -->
+                        <div id="ckepop">
+                            <span class="jiathis_txt">把ExMarket推荐给大家：</span>
+                            <a class="jiathis_button_tsina"></a>
+                            <a class="jiathis_button_qzone"></a>
+                          <a class="jiathis_button_renren"></a>
+                          <a href="http://www.jiathis.com/share?uid=1653076" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+                          <a class="jiathis_counter_style"></a>
+                        </div>
+                </p>
+      </div>
+      <div class="span5">
+        <ul class="thumbnails">
+          <li>
+            <div class="thumbnail">
+              <img src="/images/exten.png" />   
+              <div class="caption">
+                <center><a class="btn btn-success" href="/crx/OneKeyExMarket.crx"><strong>立即获取,更便捷的ExMarket!</strong></a></center>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <ul class="nav nav-pills">
       <li class="active">
         <a href="/">最新</a>
       </li>
@@ -67,12 +77,12 @@
           <a class="dropdown-toggle tip" rel="tooltip" title="默认按评分排序">排序 <b class="caret"></b></a>
       </li>
     </ul>
-		
-		<div class=row>
-			<div class="span12">
-				<ul class="thumbnails">
-					
-					<% for(var i=0; i<result.length; i++){ %>
+    
+    <div class=row>
+      <div class="span12">
+        <ul class="thumbnails">
+          
+          <% for(var i=0; i<result.length; i++){ %>
             <% if(result[i].pass === 1) { %>
             <li class="span3" name="extshow">
             <!-- Gallery -->
@@ -87,15 +97,15 @@
             </li>
             <% } %>
           <% } %>
-				</ul>
-			</div>
-      <div class="span12" style="text-align: center; margin-top: 100px; font-size: 12px">
+        </ul>
+      </div>
+      <div class="span12" style="text-align: center; margin-top: 50px; font-size: 12px">
         <p>By <a href="http://djyde.github.com"> Randy </a></p>
         <p><a href="http://nodejs.org">Node.js</a>(<a href="http://expressjs.org">Express</a>) , <a href="http://mongodb.org">Mongodb</a>(<a href="https://github.com/kissjs/node-mongoskin">Mongoskin</a>) , <a href="http://embeddedjs.com">EJS</a></p>
         <p>感谢<a href="http://cnodejs.net">NAE</a>提供初始动力</p>
       </div>
-		</div>
-		<div class="modal hide" id="push">
+    </div>
+    <div class="modal hide" id="push">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">x</button>
         <h3>投递</h3>
@@ -129,6 +139,7 @@
           </form>
       </div>
     </div>
-
-	</body>
+    <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
+    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1136381498130604" charset="utf-8"></script>
+  </body>
 </html>
